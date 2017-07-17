@@ -22,6 +22,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonHolder> {
     //Дальше забота по наполнению этой вьюшки ложиться именно на объект PersonHolder'а
     @Override
     public PersonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        ///
         LayoutInflater li = getLayoutInflater();
         View view = li.inflate(R.layout.list_item_person, parent, false);
         return new PersonHolder(view);
