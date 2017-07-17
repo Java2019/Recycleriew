@@ -1,5 +1,6 @@
 package com.nemo.recyclerview;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,16 +15,18 @@ RecyclerView в методе onCreate нашей активити*/
 public class PersonAdapter extends RecyclerView.Adapter<PersonHolder> {
 
     private List<CloneFactory.Person> mPersons;
-    public PersonAdapter(List<CloneFactory.Person> persons) {
+    private LayoutInflater li;
+
+    public PersonAdapter(List<CloneFactory.Person> persons, Context context) {
         mPersons = persons;
+        li = LayoutInflater.from(context);
     }
 
     //Создаёт пустую вьюшку,оборачивает её в PersonHolder.
     //Дальше забота по наполнению этой вьюшки ложиться именно на объект PersonHolder'а
     @Override
     public PersonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ///
-        LayoutInflater li = getLayoutInflater();
+
         View view = li.inflate(R.layout.list_item_person, parent, false);
         return new PersonHolder(view);
 

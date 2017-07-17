@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         //Подготавливаем армию клонов
         List<CloneFactory.Person> personList = CloneFactory.getCloneList();
         //Создаём экземпляр адаптера и передаём ему под командование наших клонов. Далее руководит ими он
-        mAdapter = new PersonAdapter(personList);
+        mAdapter = new PersonAdapter(personList, this);
         //Назначаем вьюхе адаптером наш экземпляр PersonAdapter
         mRecyclerView.setAdapter(mAdapter);
 
